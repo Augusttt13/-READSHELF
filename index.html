@@ -237,20 +237,9 @@
 
   <script>
     const palette = ['#7B4335','#385963','#705B43','#9A6C41','#575C4C','#9A4E3C','#4A6570','#806A50','#654E4C','#A47A43','#4C5B55','#7D5541'];
-    const seedBooks = [
-      {id:'b1',title:'我与地坛',author:'史铁生',finishedDate:'2026-06-18',note:'有些事只适合收藏，不能说，也不能想，却又不能忘。\n\n重新读到地坛里的那些树与风，忽然觉得时间并不是带走一切，它也会把一些东西慢慢沉淀下来。'},
-      {id:'b2',title:'悉达多',author:'赫尔曼·黑塞',finishedDate:'2026-05-09',note:'知识可以传授，智慧却不能。真正重要的答案，似乎总要自己走过去。'},
-      {id:'b3',title:'山茶文具店',author:'小川糸',finishedDate:'2026-04-21',note:'写信是一件缓慢的事。因为缓慢，心意才有机会显现。'},
-      {id:'b4',title:'置身事内',author:'兰小欢',finishedDate:'2026-03-17',note:'理解复杂世界的一种方式，是先看到每个人所在的位置。'},
-      {id:'b5',title:'人间草木',author:'汪曾祺',finishedDate:'2026-02-02',note:'生活是很好玩的。草木有情，寻常日子里也有光。'},
-      {id:'b6',title:'小王子',author:'安托万·德·圣-埃克苏佩里',finishedDate:'2025-12-29',note:'真正重要的东西，用眼睛是看不见的。'},
-      {id:'b7',title:'禅与摩托车维修艺术',author:'罗伯特·波西格',finishedDate:'2025-11-06',note:'良质不是一个简单的定义，而是一种专注地对待事物的方式。'},
-      {id:'b8',title:'东京八平米',author:'吉井忍',finishedDate:'2025-09-14',note:'空间的大小，并不决定生活的丰盛程度。'},
-      {id:'b9',title:'也许你该找个人聊聊',author:'洛莉·戈特利布',finishedDate:'2025-08-23',note:'我们总在别人的故事里看见自己。'},
-      {id:'b10',title:'一只特立独行的猪',author:'王小波',finishedDate:'2025-07-11',note:'有趣与自由，都需要一点不肯被安排的勇气。'}
-    ].map((b,i)=>({...b,color:palette[i],createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()}));
+    const seedBooks = [];
 
-    let books = JSON.parse(localStorage.getItem('readshelf_books') || 'null') || seedBooks;
+    let books = JSON.parse(localStorage.getItem('readshelf_books') || 'null') || [];
     let currentPage = 0, activeBookId = null, step = 0, touchStartX = 0, pendingCover = '';
     let editingExisting = false;
     const $ = s => document.querySelector(s);
