@@ -111,7 +111,12 @@
     .empty-note { color:#B9AC8C; font-style:normal; }
     .toast { position:absolute; left:50%; bottom:92px; transform:translate(-50%,16px); background:rgba(132,95,74,.9); color:#F0EDDC; padding:10px 17px; border-radius:999px; font-size:13px; opacity:0; pointer-events:none; transition:.25s; z-index:80; }
     .toast.show { opacity:1; transform:translate(-50%,0); }
-    @media (max-width:699px) { .shelf-wrap { padding:0 14px 24px; } .shelf-case { max-width:none; aspect-ratio:.7; margin:auto; } }
+    @media (max-width:699px) {
+      .app-shell { height:auto; min-height:100svh; overflow:visible; }
+      .shelf-wrap { margin:3vh 4vw; padding:0 14px 24px; }
+      .shelf-case { max-width:none; aspect-ratio:.7; margin:auto; padding-bottom:24vh; overflow:visible; }
+      .book { overflow:visible; }
+    }
     @media (min-width:700px) { body { background:#E5DDC5; } .app-shell { box-shadow:0 0 70px rgba(132,95,74,.1); } }
     @media (max-height:740px) { .book { width:min(100%,67px); } .notebook-page-content{font-size:12px;line-height:24px} .notebook-page{padding:14px 12px 14px 22px} .notebook-spine{width:12px} }
   </style>
