@@ -112,9 +112,9 @@
     .toast { position:absolute; left:50%; bottom:92px; transform:translate(-50%,16px); background:rgba(132,95,74,.9); color:#F0EDDC; padding:10px 17px; border-radius:999px; font-size:13px; opacity:0; pointer-events:none; transition:.25s; z-index:80; }
     .toast.show { opacity:1; transform:translate(-50%,0); }
     @media (max-width:699px) {
-      .app-shell { height:auto; min-height:100svh; overflow:visible; }
-      .shelf-wrap { margin:2vh 4vw 0; padding:0 14px 4vh; }
-      .shelf-case { max-width:none; aspect-ratio:.7; margin:auto; padding-bottom:6vh; overflow:visible; }
+      .app-shell { height:100dvh; display:flex; flex-direction:column; overflow:hidden; }
+      .shelf-wrap { margin:2vh 4vw 0; padding:0 14px; flex:1; min-height:0; }
+      .shelf-case { width:100%; max-width:none; aspect-ratio:.7; height:100%; margin:0; padding:16px 16px 0; overflow:visible; }
       .book { overflow:visible; }
     }
     @media (min-width:700px) { body { background:#E5DDC5; } .app-shell { box-shadow:0 0 70px rgba(132,95,74,.1); } }
