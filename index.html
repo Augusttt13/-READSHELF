@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#F7F2EA" />
+  <meta name="theme-color" content="#F0EDDC" />
   <title>ReadShelf · 我的书架</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,8 +11,8 @@
       theme: {
         extend: {
           colors: {
-            paper: '#F7F2EA', ink: '#3C2F26', body: '#5C5047', muted: '#8F8478',
-            walnut: '#8B6A4E', deepwood: '#6B4F38', light: '#E8C98D'
+            paper: '#F0EDDC', ink: '#845F4A', body: '#6B5540', muted: '#B9AC8C',
+            walnut: '#B9AC8C', deepwood: '#845F4A', light: '#DFA0AA'
           },
           fontFamily: { sans: ['-apple-system', 'BlinkMacSystemFont', 'PingFang SC', 'SF Pro Display', 'Helvetica Neue', 'sans-serif'] }
         }
@@ -20,7 +20,7 @@
     }
   </script>
   <style>
-    :root { --paper:#F7F2EA; --ink:#3C2F26; --body:#5C5047; --muted:#8F8478; --wood:#8B6A4E; --deep:#6B4F38; }
+    :root { --paper:#F0EDDC; --ink:#845F4A; --body:#6B5540; --muted:#B9AC8C; --wood:#B9AC8C; --deep:#845F4A; }
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     html, body { margin: 0; min-height: 100%; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "SF Pro Display", "Helvetica Neue", sans-serif; }
     body { overflow: hidden; }
@@ -29,17 +29,17 @@
     .pressable { transition: transform .18s ease, opacity .18s ease; }
     .pressable:active { transform: scale(.95); }
     .app-shell { width:100vw; min-width:0; height:100dvh; max-width:520px; margin:0 auto; position:relative; overflow:hidden; background:var(--paper); }
-    .soft-grain { position:absolute; inset:0; pointer-events:none; opacity:.18; mix-blend-mode:multiply; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E"); }
+    .soft-grain { position:absolute; inset:0; pointer-events:none; opacity:.12; mix-blend-mode:multiply; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.1'/%3E%3C/svg%3E"); }
     .shelf-wrap { height:calc(100dvh - 60px); padding:4px 20px 10px; display:flex; align-items:flex-start; }
-    .shelf-case { position:relative; flex:0 1 100%; width:100%; min-width:0; height:auto; max-height:100%; aspect-ratio:.52; border-radius:3px 3px 9px 9px; overflow:hidden; padding:17px 14px 14px; background:repeating-linear-gradient(90deg,#765033 0,#765033 3px,#805a3a 4px,#855c3b 17px,#775035 18px,#805738 34px); box-shadow:inset 0 0 0 2px rgba(55,31,15,.48),inset 18px 0 28px rgba(30,15,5,.34),inset -18px 0 28px rgba(30,15,5,.34),0 18px 38px rgba(67,42,24,.2); }
-    .shelf-case:before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(31,16,6,.34),transparent 11%,transparent 89%,rgba(31,16,6,.34)),linear-gradient(180deg,rgba(246,208,139,.12),transparent 10%); pointer-events:none; z-index:2; }
-    .shelf-case:after { content:""; position:absolute; left:20px; right:20px; top:5px; height:3px; border-radius:0 0 8px 8px; background:#f1bd6d; box-shadow:0 3px 11px 3px rgba(255,202,113,.72); opacity:.9; z-index:3; }
-    .shelf-grid { position:relative; height:100%; display:grid; grid-template-rows:repeat(4,1fr); z-index:1; }
+    .shelf-case { position:relative; flex:0 1 100%; width:100%; min-width:0; height:auto; max-height:100%; aspect-ratio:.72; border-radius:3px 3px 9px 9px; overflow:hidden; padding:17px 14px 14px; background:repeating-linear-gradient(90deg,#DDD5B8 0,#DDD5B8 3px,#E5DDC5 4px,#E2DAC2 17px,#D8D0B3 18px,#E0D9C0 34px); box-shadow:inset 0 0 0 2px rgba(132,95,74,.2),inset 18px 0 28px rgba(100,70,50,.1),inset -18px 0 28px rgba(100,70,50,.1),0 18px 38px rgba(132,95,74,.12); }
+    .shelf-case:before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(100,70,50,.14),transparent 11%,transparent 89%,rgba(100,70,50,.14)),linear-gradient(180deg,rgba(223,160,170,.08),transparent 10%); pointer-events:none; z-index:2; }
+    .shelf-case:after { content:""; position:absolute; left:20px; right:20px; top:5px; height:3px; border-radius:0 0 8px 8px; background:#DFA0AA; box-shadow:0 3px 11px 3px rgba(223,160,170,.5); opacity:.85; z-index:3; }
+    .shelf-grid { position:relative; height:100%; display:grid; grid-template-rows:repeat(3,1fr); z-index:1; }
     .shelf-row { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:end; padding: 5px 10px 14px; position:relative; min-height:0; }
-    .shelf-row:after { content:""; position:absolute; height:14px; left:-14px; right:-14px; bottom:0; background:linear-gradient(#9f7046 0 22%,#704426 23% 60%,#4d2b18 100%); box-shadow:0 -7px 13px rgba(255,193,101,.34),0 7px 10px rgba(30,15,6,.48); z-index:0; }
+    .shelf-row:after { content:""; position:absolute; height:14px; left:-14px; right:-14px; bottom:0; background:linear-gradient(#C4B898 0 22%,#B9AC8C 23% 60%,#9A8E70 100%); box-shadow:0 -7px 13px rgba(185,172,140,.3),0 7px 10px rgba(132,95,74,.2); z-index:0; }
     .book-slot { height:100%; display:flex; justify-content:center; align-items:flex-end; position:relative; z-index:1; }
-    .book { width:min(100%,72px); aspect-ratio:2/3; border:0; padding:0; border-radius:2px 5px 5px 2px; overflow:hidden; position:relative; cursor:pointer; background:#e4d2b3; box-shadow:-2px 1px 0 rgba(255,255,255,.22),1px 0 0 rgba(65,39,19,.45),5px 8px 10px rgba(27,13,5,.46); transform-origin:center bottom; transition:transform .25s ease,box-shadow .25s ease,filter .25s ease; }
-    .book:hover { transform:translateY(-4px) scale(1.02); box-shadow:-2px 1px 0 rgba(255,255,255,.2),5px 11px 13px rgba(35,19,8,.38); }
+    .book { width:min(100%,72px); aspect-ratio:2/3; border:0; padding:0; border-radius:2px 5px 5px 2px; overflow:hidden; position:relative; cursor:pointer; background:#F0EDDC; box-shadow:-2px 1px 0 rgba(255,255,255,.35),1px 0 0 rgba(132,95,74,.22),5px 8px 10px rgba(132,95,74,.22); transform-origin:center bottom; transition:transform .25s ease,box-shadow .25s ease,filter .25s ease; }
+    .book:hover { transform:translateY(-4px) scale(1.02); box-shadow:-2px 1px 0 rgba(255,255,255,.3),5px 11px 13px rgba(132,95,74,.18); }
     .book:active { transform:translateY(-7px) scale(1.02); }
     .book-cover { position:absolute; inset:0; z-index:2; width:100%; height:100%; object-fit:cover; display:block; }
     .book-cover-fallback { position:absolute; inset:0; overflow:hidden; display:flex; flex-direction:column; align-items:center; padding:12px 6px 7px; text-align:center; color:#3f3025; background:linear-gradient(145deg,var(--cover-light,#f1dfbf),var(--cover-base,#d5b78e)); }
@@ -51,60 +51,67 @@
     .cover-sun { position:absolute; width:7px; height:7px; border-radius:50%; background:rgba(251,226,177,.78); right:15%; bottom:27%; z-index:1; box-shadow:0 0 8px rgba(255,225,168,.5); }
     .page-track { display:flex; width:100%; height:100%; transition:transform .45s cubic-bezier(.22,.8,.32,1); }
     .shelf-page { min-width:100%; height:100%; }
-    .shelf-nav { position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border:1px solid rgba(255,255,255,.4); border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.35); backdrop-filter:blur(13px); box-shadow:0 5px 18px rgba(50,31,18,.18); z-index:5; }
+    .shelf-nav { position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border:1px solid rgba(185,172,140,.4); border-radius:50%; display:grid; place-items:center; background:rgba(240,237,220,.5); backdrop-filter:blur(13px); box-shadow:0 5px 18px rgba(132,95,74,.1); z-index:5; }
     .shelf-nav.prev { left:5px; } .shelf-nav.next { right:5px; }
     .shelf-nav[disabled] { opacity:.25; pointer-events:none; }
     .dots { position:absolute; left:50%; bottom:2px; transform:translateX(-50%); display:flex; gap:7px; z-index:5; }
-    .dot { width:5px; height:5px; border-radius:50%; background:rgba(60,47,38,.24); transition:.25s; }
-    .dot.active { width:16px; border-radius:4px; background:rgba(60,47,38,.7); }
-    .shelf-add { width:44px; height:44px; align-self:center; display:grid; place-items:center; border:1px solid rgba(255,255,255,.7); border-radius:50%; background:rgba(255,255,255,.1); color:#fff; box-shadow:0 5px 16px rgba(30,15,6,.18),inset 0 1px rgba(255,255,255,.22); backdrop-filter:blur(8px); cursor:pointer; }
+    .dot { width:5px; height:5px; border-radius:50%; background:rgba(185,172,140,.4); transition:.25s; }
+    .dot.active { width:16px; border-radius:4px; background:rgba(132,95,74,.65); }
+    .shelf-add { width:44px; height:44px; align-self:center; display:grid; place-items:center; border:1px solid rgba(223,160,170,.5); border-radius:50%; background:rgba(223,160,170,.18); color:#845F4A; box-shadow:0 5px 16px rgba(132,95,74,.1),inset 0 1px rgba(255,255,255,.35); backdrop-filter:blur(8px); cursor:pointer; }
     .shelf-add svg { width:21px; height:21px; }
-    .shelf-add:hover { background:rgba(255,255,255,.17); }
-    .modal-layer { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:24px; background:linear-gradient(rgba(52,31,16,.78),rgba(38,22,11,.88)),repeating-linear-gradient(90deg,#6b482e 0,#6b482e 4px,#765136 5px,#765136 22px); backdrop-filter:blur(8px); z-index:30; opacity:0; pointer-events:none; transition:opacity .28s ease; }
+    .shelf-add:hover { background:rgba(223,160,170,.3); }
+    .modal-layer { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:24px; background:linear-gradient(rgba(132,95,74,.65),rgba(110,75,55,.75)),repeating-linear-gradient(90deg,#B9AC8C 0,#B9AC8C 4px,#C5B99A 5px,#C5B99A 22px); backdrop-filter:blur(8px); z-index:30; opacity:0; pointer-events:none; transition:opacity .28s ease; }
     .modal-layer.open { opacity:1; pointer-events:auto; }
-    .modal-card { width:100%; max-height:calc(100dvh - 48px); overflow-y:auto; scrollbar-width:none; border:1px solid rgba(255,255,255,.55); border-radius:16px; padding:24px 22px 22px; background:linear-gradient(145deg,rgba(250,241,225,.96),rgba(229,210,185,.94)); box-shadow:0 24px 70px rgba(22,12,5,.42),inset 0 1px rgba(255,255,255,.9); transform:translateY(18px) scale(.97); transition:transform .32s cubic-bezier(.2,.9,.3,1); }
+    .modal-card { width:100%; max-height:calc(100dvh - 48px); overflow-y:auto; scrollbar-width:none; border:1px solid rgba(223,160,170,.35); border-radius:16px; padding:24px 22px 22px; background:linear-gradient(145deg,rgba(240,237,220,.97),rgba(223,160,170,.25)); box-shadow:0 24px 70px rgba(100,60,40,.3),inset 0 1px rgba(255,255,255,.85); transform:translateY(18px) scale(.97); transition:transform .32s cubic-bezier(.2,.9,.3,1); }
     .modal-layer.open .modal-card { transform:none; }
     .step-pane { display:none; } .step-pane.active { display:block; animation:stepIn .28s ease; }
     @keyframes stepIn { from{opacity:0;transform:translateX(9px)} to{opacity:1;transform:none} }
     .step-dots { display:flex; justify-content:center; gap:7px; margin-bottom:26px; }
-    .step-dot { width:6px; height:6px; border-radius:50%; background:#d5c8ba; transition:.25s; }
+    .step-dot { width:6px; height:6px; border-radius:50%; background:#D5C8B8; transition:.25s; }
     .step-dot.active { width:20px; border-radius:5px; background:var(--wood); }
-    .field-line { width:100%; border:0; border-bottom:1px solid #c9baaa; background:transparent; outline:none; padding:13px 2px 11px; color:var(--ink); font-size:21px; }
-    .field-line::placeholder { color:#b2a79b; }
+    .field-line { width:100%; border:0; border-bottom:1px solid #C5B99A; background:transparent; outline:none; padding:13px 2px 11px; color:var(--ink); font-size:21px; }
+    .field-line::placeholder { color:#B9AC8C; }
     .cover-picker { display:flex; align-items:center; gap:14px; margin-top:9px; }
-    .cover-preview { width:58px; height:82px; flex:none; display:grid; place-items:center; overflow:hidden; border-radius:3px 6px 6px 3px; border:1px solid rgba(139,106,78,.2); background:rgba(247,242,234,.62); color:#a99b8e; box-shadow:2px 4px 10px rgba(83,53,29,.1); }
+    .cover-preview { width:58px; height:82px; flex:none; display:grid; place-items:center; overflow:hidden; border-radius:3px 6px 6px 3px; border:1px solid rgba(185,172,140,.35); background:rgba(240,237,220,.7); color:#B9AC8C; box-shadow:2px 4px 10px rgba(132,95,74,.06); }
     .cover-preview img { width:100%; height:100%; object-fit:cover; }
-    .upload-btn,.match-btn { min-height:38px; border-radius:999px; border:1px solid rgba(139,106,78,.24); background:rgba(247,242,234,.45); color:#6f5947; padding:8px 14px; font-size:13px; }
+    .upload-btn,.match-btn { min-height:38px; border-radius:999px; border:1px solid rgba(185,172,140,.35); background:rgba(240,237,220,.55); color:#845F4A; padding:8px 14px; font-size:13px; }
     .match-btn { width:100%; margin-top:15px; }
     .match-btn:disabled { opacity:.55; }
-    .note-paper { width:100%; min-height:175px; resize:none; border:0; outline:none; border-radius:14px; padding:15px 16px; background:rgba(247,242,234,.66); color:var(--body); font-size:17px; line-height:1.8; box-shadow:inset 0 0 0 1px rgba(139,106,78,.12); background-image:repeating-linear-gradient(transparent,transparent 29px,rgba(139,106,78,.09) 30px); }
-    .primary-btn { width:100%; height:52px; border:0; border-radius:999px; background:linear-gradient(180deg,#d9bc95,#cfad82); color:#4b3626; font-weight:500; box-shadow:inset 0 1px rgba(255,255,255,.5),0 6px 14px rgba(86,54,29,.12); }
+    .note-paper { width:100%; min-height:175px; resize:none; border:0; outline:none; border-radius:14px; padding:15px 16px; background:rgba(240,237,220,.75); color:var(--body); font-size:17px; line-height:1.8; box-shadow:inset 0 0 0 1px rgba(185,172,140,.18); background-image:repeating-linear-gradient(transparent,transparent 29px,rgba(185,172,140,.08) 30px); }
+    .primary-btn { width:100%; height:52px; border:0; border-radius:999px; background:linear-gradient(180deg,#DFA0AA,#C88A95); color:#fff; font-weight:500; box-shadow:inset 0 1px rgba(255,255,255,.4),0 6px 14px rgba(132,95,74,.1); }
     .text-btn { border:0; background:none; color:var(--muted); padding:11px 15px; }
-    .detail-view { position:absolute; inset:0; z-index:20; opacity:0; pointer-events:none; overflow:hidden; background:linear-gradient(rgba(47,28,15,.74),rgba(39,22,11,.82)),repeating-linear-gradient(90deg,#755035 0,#755035 4px,#815a3b 5px,#815a3b 24px); backdrop-filter:blur(8px); transition:opacity .2s ease; }
+    .detail-view { position:absolute; inset:0; z-index:20; opacity:0; pointer-events:none; overflow:hidden; background:linear-gradient(rgba(180,160,145,.55),rgba(160,140,125,.6)),repeating-linear-gradient(90deg,#D8D0B3 0,#D8D0B3 4px,#E0D9C0 5px,#E0D9C0 24px); backdrop-filter:blur(8px); transition:opacity .2s ease; }
     .detail-view.open { opacity:1; pointer-events:auto; }
     .detail-inner { min-height:100%; padding:18px 12px 34px; display:flex; flex-direction:column; }
-    .detail-back { color:#f2e6d5; flex:none; }
-    .open-book { width:100%; max-width:480px; min-height:318px; margin:70px auto 22px; display:grid; grid-template-columns:1fr 1fr; perspective:1400px; filter:drop-shadow(0 25px 26px rgba(19,9,3,.5)); transform:translate(var(--pull-x,0),var(--pull-y,95px)) scale(var(--pull-scale,.24)) rotate(-4deg); opacity:.2; transition:transform .45s cubic-bezier(.65,0,.25,1),opacity .25s ease; }
-    .detail-view.open .open-book { transform:translateY(0) scale(1) rotate(0); opacity:1; }
-    .book-page { position:relative; min-width:0; overflow:hidden; background:#ead6b7; box-shadow:inset 0 0 35px rgba(92,59,31,.16); }
-    .book-page.cover-page { border-radius:9px 2px 2px 9px; transform-origin:right center; animation:openCover .48s cubic-bezier(.65,0,.35,1); }
-    .book-page.note-page { border-radius:2px 9px 9px 2px; padding:25px 18px 18px; background:linear-gradient(90deg,#dfc49f,#f0dfc4 9%,#ead4b3 100%); }
-    .book-page.note-page:before { content:""; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(transparent,transparent 29px,rgba(113,78,48,.08) 30px); }
-    .book-page.note-page:after { content:""; position:absolute; left:-9px; top:0; bottom:0; width:18px; background:radial-gradient(ellipse at center,rgba(70,42,21,.28),transparent 68%); }
-    @keyframes openCover { from{transform:rotateY(-32deg)} to{transform:rotateY(0)} }
-    .detail-cover { position:absolute; inset:0; overflow:hidden; }
-    .detail-cover .book-title-mini { font-size:21px; }
-    .detail-cover .book-author-mini { font-size:10px; }
-    .detail-cover .book-cover-fallback { padding-top:54px; }
-    .detail-cover .book-cover-fallback:after { height:48%; }
-    .detail-heading { position:relative; z-index:1; padding-bottom:12px; border-bottom:1px solid rgba(102,67,38,.18); }
-    .note-display { position:relative; z-index:1; margin-top:14px; padding:0; border:0; color:#5c4938; font-size:13px; line-height:1.85; white-space:pre-wrap; max-height:170px; overflow:auto; scrollbar-width:none; }
-    .detail-action { color:#f4e8d7; border-color:rgba(255,255,255,.35)!important; background:rgba(255,255,255,.12); backdrop-filter:blur(10px); flex:none; }
-    .empty-note { color:#a89d91; font-style:normal; }
-    .toast { position:absolute; left:50%; bottom:92px; transform:translate(-50%,16px); background:rgba(60,47,38,.9); color:#fffaf2; padding:10px 17px; border-radius:999px; font-size:13px; opacity:0; pointer-events:none; transition:.25s; z-index:80; }
+    .detail-back { color:#845F4A; flex:none; }
+    .notebook-header { text-align:center; flex:none; padding:0 4px 14px; }
+    .notebook-title { font-size:17px; color:#845F4A; font-weight:500; letter-spacing:.04em; margin:0; }
+    .notebook-meta { font-size:11px; color:#6B5540; margin:4px 0 0; letter-spacing:.04em; }
+    .notebook { flex:1; display:flex; align-items:stretch; margin:0 6px; min-height:0; perspective:1500px; position:relative; }
+    .notebook-page { flex:1; position:relative; background:linear-gradient(180deg,#F4EFD8 0%,#F0EDDC 30%,#EDE7D2 100%); box-shadow:0 10px 26px rgba(132,95,74,.12),inset 0 0 0 1px rgba(185,172,140,.2); overflow:hidden; padding:18px 16px 18px 26px; min-height:0; transition:opacity .3s ease,transform .3s ease; }
+    .notebook-page.left { border-radius:3px 0 0 3px; }
+    .notebook-page.right { border-radius:0 3px 3px 0; }
+    .notebook-page:before { content:""; position:absolute; inset:0; pointer-events:none; background-image:repeating-linear-gradient(transparent,transparent 27px,rgba(185,172,140,.18) 28px); }
+    .notebook-page.flip-out-left { opacity:0; transform:translateX(-20px); }
+    .notebook-page.flip-out-right { opacity:0; transform:translateX(20px); }
+    .notebook-margin { position:absolute; left:18px; top:0; bottom:0; width:1px; background:rgba(223,160,170,.4); pointer-events:none; }
+    .notebook-page-content { position:relative; z-index:1; font-size:14px; line-height:27px; color:#6B5540; white-space:pre-wrap; word-break:break-word; min-height:100%; }
+    .notebook-spine { width:16px; flex:none; position:relative; background:linear-gradient(90deg,rgba(132,95,74,.22) 0%,rgba(132,95,74,.05) 45%,rgba(132,95,74,.22) 100%); }
+    .notebook-spine:before { content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:rgba(80,50,30,.18); }
+    .notebook-controls { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:18px; padding:0 4px; flex:none; }
+    .page-arrow { width:46px; height:46px; border:1px solid rgba(185,172,140,.4); border-radius:50%; display:grid; place-items:center; background:rgba(240,237,220,.65); color:#845F4A; cursor:pointer; box-shadow:0 4px 12px rgba(132,95,74,.1); transition:.2s; }
+    .page-arrow:hover { background:rgba(223,160,170,.28); }
+    .page-arrow:disabled { opacity:.22; pointer-events:none; }
+    .notebook-edit-btn { display:flex; align-items:center; gap:8px; padding:0 22px; height:46px; border:1px solid rgba(185,172,140,.4); border-radius:999px; background:rgba(240,237,220,.75); color:#845F4A; font-size:14px; font-weight:500; box-shadow:0 4px 12px rgba(132,95,74,.1); cursor:pointer; transition:.2s; }
+    .notebook-edit-btn:hover { background:rgba(223,160,170,.3); }
+    .notebook-edit-btn .page-indicator { font-size:10px; color:#B9AC8C; font-weight:400; padding-left:8px; border-left:1px solid rgba(185,172,140,.4); }
+    .detail-delete { color:rgba(200,110,100,.85); border-color:rgba(223,160,170,.3)!important; background:rgba(240,237,220,.18); backdrop-filter:blur(10px); flex:none; }
+    .detail-delete:hover { color:#fff; background:rgba(200,100,90,.25); }
+    .empty-note { color:#B9AC8C; font-style:normal; }
+    .toast { position:absolute; left:50%; bottom:92px; transform:translate(-50%,16px); background:rgba(132,95,74,.9); color:#F0EDDC; padding:10px 17px; border-radius:999px; font-size:13px; opacity:0; pointer-events:none; transition:.25s; z-index:80; }
     .toast.show { opacity:1; transform:translate(-50%,0); }
-    @media (min-width:700px) { body { background:#e7ddd1; } .app-shell { box-shadow:0 0 70px rgba(71,51,35,.16); } }
-    @media (max-height:720px) { .shelf-wrap { padding-top:0; } .shelf-case { max-width:330px; margin:auto; } .book { width:min(100%,58px); } .open-book{min-height:270px}.note-display{max-height:132px} }
+    @media (min-width:700px) { body { background:#E5DDC5; } .app-shell { box-shadow:0 0 70px rgba(132,95,74,.1); } }
+    @media (max-height:740px) { .shelf-wrap { padding-top:0; } .shelf-case { max-width:330px; margin:auto; } .book { width:min(100%,58px); } .notebook-page-content{font-size:12px;line-height:24px} .notebook-page{padding:14px 12px 14px 22px} .notebook-spine{width:12px} }
   </style>
 </head>
 <body>
@@ -145,24 +152,37 @@
         <button id="backBtn" class="detail-back pressable w-11 h-11 grid place-items-center" aria-label="返回书架">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
         </button>
-        <div class="open-book" id="openBook">
-          <div class="book-page cover-page">
-            <div class="detail-cover" id="detailCover"></div>
-          </div>
-          <article class="book-page note-page">
-            <div class="detail-heading">
-              <p class="text-[10px] text-[#87705b] tracking-[.08em]">阅读完成</p>
-              <p class="text-[12px] text-[#5c4938] mt-1" id="detailDate"></p>
-              <h2 class="text-[19px] font-medium leading-tight mt-4" id="detailTitle"></h2>
-              <p class="text-[11px] text-[#87705b] mt-1" id="detailAuthor"></p>
-            </div>
-            <p class="text-[10px] text-[#87705b] mt-4 relative z-[1] tracking-[.08em]">我的记录</p>
-            <div class="note-display" id="detailNote"></div>
-          </article>
+        <div class="notebook-header">
+          <h2 class="notebook-title" id="notebookTitle"></h2>
+          <p class="notebook-meta"><span id="notebookAuthor"></span> · <span id="notebookDate"></span></p>
         </div>
-        <button id="editBtn" class="detail-action pressable px-5 h-11 rounded-full border text-[14px] flex items-center gap-2 mx-auto">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg>
-          续写记录
+        <div class="notebook" id="notebook">
+          <div class="notebook-page left">
+            <div class="notebook-margin"></div>
+            <div class="notebook-page-content" id="notebookPageLeft"></div>
+          </div>
+          <div class="notebook-spine"></div>
+          <div class="notebook-page right">
+            <div class="notebook-margin"></div>
+            <div class="notebook-page-content" id="notebookPageRight"></div>
+          </div>
+        </div>
+        <div class="notebook-controls">
+          <button class="page-arrow prev pressable" id="prevNotePage" aria-label="上一页">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button id="editBtn" class="notebook-edit-btn pressable">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg>
+            续写记录
+            <span class="page-indicator" id="pageIndicator">1/1</span>
+          </button>
+          <button class="page-arrow next pressable" id="nextNotePage" aria-label="下一页">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+        <button id="deleteBtn" class="detail-delete pressable text-[13px] mx-auto mt-4 flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14"/></svg>
+          删除此书
         </button>
       </div>
     </section>
@@ -223,13 +243,25 @@
     <div class="modal-layer" id="editLayer" role="dialog" aria-modal="true" aria-label="续写阅读记录">
       <div class="modal-card">
         <div class="flex items-start justify-between mb-5">
-          <div><p class="text-[12px] tracking-[.14em] text-muted mb-1">我的记录</p><h3 class="text-[24px] font-medium">续写这一页</h3></div>
+          <div><p class="text-[12px] tracking-[.14em] text-muted mb-1">编辑</p><h3 class="text-[24px] font-medium">编辑这本书</h3></div>
           <button id="closeEdit" class="pressable w-9 h-9 grid place-items-center text-muted" aria-label="关闭">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
           </button>
         </div>
+        <label class="text-[13px] text-muted mb-1 block" for="editAuthorInput">作者</label>
+        <input id="editAuthorInput" class="field-line !text-[18px] mb-4" placeholder="补充作者" />
+        <label class="text-[13px] text-muted mb-1 block">我的记录</label>
         <textarea id="editNoteInput" class="note-paper" placeholder="写下新的感受……"></textarea>
         <button id="saveEdit" class="primary-btn pressable mt-6">保存记录</button>
+      </div>
+    </div>
+    <div class="modal-layer" id="confirmLayer" role="dialog" aria-modal="true">
+      <div class="modal-card !max-w-[280px] text-center">
+        <p class="text-[15px] text-[#845F4A] mb-6" id="confirmMsg"></p>
+        <div class="flex gap-3">
+          <button id="confirmCancel" class="text-btn pressable flex-1 !text-[#B9AC8C]">取消</button>
+          <button id="confirmOk" class="primary-btn pressable flex-1 !h-[44px] text-[15px]">确认删除</button>
+        </div>
       </div>
     </div>
     <div class="toast" id="toast">已放入书架</div>
@@ -240,7 +272,7 @@
     const seedBooks = [];
 
     let books = JSON.parse(localStorage.getItem('readshelf_books') || 'null') || [];
-    let currentPage = 0, activeBookId = null, step = 0, touchStartX = 0, pendingCover = '';
+    let currentPage = 0, activeBookId = null, step = 0, touchStartX = 0, pendingCover = '', currentSpread = 0, totalSpreads = 1, notePages = [], confirmCallback = null;
     let editingExisting = false;
     const $ = s => document.querySelector(s);
     const $$ = s => [...document.querySelectorAll(s)];
@@ -258,12 +290,12 @@
       return fallback+(book.cover?`<img class="book-cover" src="${escapeHtml(book.cover)}" alt="${escapeHtml(book.title)}封面" onerror="this.remove()">`:``);
     }
     function renderShelf() {
-      const pageCount = Math.max(1,Math.ceil((books.length+1)/12));
+      const pageCount = Math.max(1,Math.ceil((books.length+1)/9));
       currentPage = Math.min(currentPage,pageCount-1);
       $('#pageTrack').innerHTML = Array.from({length:pageCount},(_,p)=>{
-        const rows=Array.from({length:4},(_,r)=>{
+        const rows=Array.from({length:3},(_,r)=>{
           return `<div class="shelf-row">${Array.from({length:3},(_,c)=>{
-            const slotIndex=p*12+r*3+c, book=books[slotIndex], isAddSlot=slotIndex===books.length;
+            const slotIndex=p*9+r*3+c, book=books[slotIndex], isAddSlot=slotIndex===books.length;
             return `<div class="book-slot">${book?`<button class="book" data-id="${book.id}" aria-label="打开《${escapeHtml(book.title)}》">${coverMarkup(book)}</button>`:isAddSlot?`<button class="shelf-add pressable" type="button" aria-label="添加一本书"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>`:''}</div>`;
           }).join('')}</div>`;
         }).join('');
@@ -277,7 +309,7 @@
       $$('.book').forEach(el=>el.addEventListener('click',()=>openDetail(el.dataset.id,el)));
       $$('.shelf-add').forEach(el=>el.addEventListener('click',openModal));
     }
-    function turnPage(delta) { const max=Math.max(0,Math.ceil((books.length+1)/12)-1); currentPage=Math.max(0,Math.min(max,currentPage+delta)); renderShelf(); }
+    function turnPage(delta) { const max=Math.max(0,Math.ceil((books.length+1)/9)-1); currentPage=Math.max(0,Math.min(max,currentPage+delta)); renderShelf(); }
     function setStep(next) {
       step=next;
       $$('.step-pane').forEach(p=>p.classList.toggle('active',Number(p.dataset.step)===step));
@@ -298,25 +330,96 @@
       books.push({id:'b'+Date.now(),title,author:$('#authorInput').value.trim()||'未记录作者',cover:pendingCover,finishedDate:$('#dateInput').value,note:skip?'':$('#noteInput').value.trim(),color:palette[Math.floor(Math.random()*palette.length)],createdAt:now,updatedAt:now});
       try { localStorage.setItem('readshelf_books',JSON.stringify(books)); }
       catch (_) { books.pop(); showToast('本地空间不足，请换一张较小的封面'); setStep(0); return; }
-      currentPage=Math.floor((books.length-1)/12); renderShelf(); closeModal(); showToast('已放入书架');
+      currentPage=Math.floor((books.length-1)/9); renderShelf(); closeModal(); showToast('已放入书架');
     }
     function openDetail(id,sourceEl=null) {
       const book=books.find(b=>b.id===id); if(!book)return; activeBookId=id;
-      $('#detailCover').innerHTML=coverMarkup(book,true);
-      $('#detailTitle').textContent=book.title; $('#detailAuthor').textContent=book.author||'未记录作者'; $('#detailDate').textContent=formatDate(book.finishedDate);
-      $('#detailNote').innerHTML=book.note?escapeHtml(book.note):'<span class="empty-note">这一页还是空白的。等有想法时，再回来写几句。</span>';
-      const view=$('#detailView'), openBook=$('#openBook'); view.classList.remove('open'); view.setAttribute('aria-hidden','false');
-      if(sourceEl){
-        const source=sourceEl.getBoundingClientRect(), targetWidth=Math.min(480,innerWidth-24), targetHeight=openBook.offsetHeight||318;
-        openBook.style.setProperty('--pull-x',`${source.left+source.width/2-innerWidth/2}px`);
-        openBook.style.setProperty('--pull-y',`${source.top+source.height/2-(70+targetHeight/2)}px`);
-        openBook.style.setProperty('--pull-scale',String(Math.max(.16,source.width/targetWidth)));
+      $('#notebookTitle').textContent=book.title;
+      $('#notebookAuthor').textContent=book.author||'未记录作者';
+      $('#notebookDate').textContent=book.finishedDate?book.finishedDate.replace(/-/g,'.'):'未记录时间';
+      currentSpread=0;
+      const noteText=book.note||'';
+      if(noteText.trim()){
+        notePages=splitNoteToPages(noteText);
+        totalSpreads=Math.max(1,Math.ceil(notePages.length/2));
+        renderSpread(0);
+      } else {
+        notePages=[''];
+        totalSpreads=1;
+        $('#notebookPageLeft').innerHTML='<span class="empty-note">这一页还是空白的。<br>等有想法时，再回来写几句。</span>';
+        $('#notebookPageRight').innerHTML='';
+        updateSpreadControls();
       }
+      const view=$('#detailView'); view.classList.remove('open'); view.setAttribute('aria-hidden','false');
       void view.offsetWidth; requestAnimationFrame(()=>view.classList.add('open'));
     }
     function closeDetail() { const view=$('#detailView'); view.classList.remove('open'); setTimeout(()=>view.setAttribute('aria-hidden','true'),450); }
-    function openEdit() { const b=books.find(x=>x.id===activeBookId); if(!b)return; $('#editNoteInput').value=b.note||''; $('#editLayer').classList.add('open'); setTimeout(()=>$('#editNoteInput').focus(),220); }
-    function saveEdit() { const b=books.find(x=>x.id===activeBookId); if(!b)return; b.note=$('#editNoteInput').value.trim(); b.updatedAt=new Date().toISOString(); localStorage.setItem('readshelf_books',JSON.stringify(books)); $('#editLayer').classList.remove('open'); openDetail(b.id); showToast('记录已保存'); }
+    function openEdit() { const b=books.find(x=>x.id===activeBookId); if(!b)return; $('#editAuthorInput').value=b.author==='未记录作者'?'':(b.author||''); $('#editNoteInput').value=b.note||''; $('#editLayer').classList.add('open'); setTimeout(()=>$('#editNoteInput').focus(),220); }
+    function saveEdit() { const b=books.find(x=>x.id===activeBookId); if(!b)return; b.author=$('#editAuthorInput').value.trim()||'未记录作者'; b.note=$('#editNoteInput').value.trim(); b.updatedAt=new Date().toISOString(); localStorage.setItem('readshelf_books',JSON.stringify(books)); $('#editLayer').classList.remove('open'); openDetail(b.id); showToast('记录已保存'); }
+    function splitNoteToPages(text) {
+      const charsPerPage=180;
+      const pages=[];
+      let remaining=text;
+      while(remaining.length>0){
+        if(remaining.length<=charsPerPage){ pages.push(remaining); break; }
+        let cut=charsPerPage;
+        while(cut>charsPerPage*0.55&&remaining[cut]&&remaining[cut]!=='\n'&&remaining[cut]!=='。'&&remaining[cut]!=='，'&&remaining[cut]!=='！'&&remaining[cut]!=='？'&&remaining[cut]!=='、')cut--;
+        if(cut<=charsPerPage*0.55)cut=charsPerPage;
+        pages.push(remaining.slice(0,cut+1));
+        remaining=remaining.slice(cut+1);
+      }
+      return pages.length?pages:[''];
+    }
+    function renderSpread(direction=0) {
+      const leftIdx=currentSpread*2, rightIdx=currentSpread*2+1;
+      const leftHtml=notePages[leftIdx]?escapeHtml(notePages[leftIdx]):'';
+      const rightHtml=notePages[rightIdx]?escapeHtml(notePages[rightIdx]):'';
+      const leftEl=$('#notebookPageLeft'), rightEl=$('#notebookPageRight');
+      if(direction!==0){
+        const outClass=direction>0?'flip-out-left':'flip-out-right';
+        leftEl.classList.add(outClass); rightEl.classList.add(outClass);
+        setTimeout(()=>{
+          leftEl.innerHTML=leftHtml||(leftIdx<notePages.length?'&nbsp;':'');
+          rightEl.innerHTML=rightHtml||(rightIdx<notePages.length?'&nbsp;':'');
+          leftEl.classList.remove('flip-out-left','flip-out-right');
+          rightEl.classList.remove('flip-out-left','flip-out-right');
+          updateSpreadControls();
+        },220);
+      } else {
+        leftEl.innerHTML=leftHtml||(leftIdx<notePages.length?'&nbsp;':'');
+        rightEl.innerHTML=rightHtml||(rightIdx<notePages.length?'&nbsp;':'');
+        updateSpreadControls();
+      }
+    }
+    function updateSpreadControls() {
+      $('#pageIndicator').textContent=`${currentSpread+1}/${totalSpreads}`;
+      $('#prevNotePage').disabled=currentSpread===0;
+      $('#nextNotePage').disabled=currentSpread>=totalSpreads-1;
+    }
+    function flipNotePage(delta) {
+      const next=Math.max(0,Math.min(totalSpreads-1,currentSpread+delta));
+      if(next===currentSpread||totalSpreads<=1)return;
+      currentSpread=next;
+      renderSpread(delta);
+    }
+    function showConfirm(msg,onConfirm) {
+      $('#confirmMsg').textContent=msg;
+      confirmCallback=onConfirm;
+      $('#confirmLayer').classList.add('open');
+    }
+    function hideConfirm() {
+      $('#confirmLayer').classList.remove('open');
+      confirmCallback=null;
+    }
+    function deleteBook() {
+      const b=books.find(x=>x.id===activeBookId); if(!b)return;
+      showConfirm(`确定要删除《${b.title}》吗？`,()=>{
+        books=books.filter(x=>x.id!==activeBookId);
+        localStorage.setItem('readshelf_books',JSON.stringify(books));
+        closeDetail(); currentPage=Math.min(currentPage,Math.max(0,Math.ceil((books.length+1)/9)-1)); renderShelf();
+        showToast('已从书架移除');
+      });
+    }
 
     $('#closeModal').addEventListener('click',closeModal);
     $('#modalLayer').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal()});
@@ -371,7 +474,11 @@
     $$('[data-back]').forEach(b=>b.addEventListener('click',()=>setStep(Number(b.dataset.back))));
     $('#saveBookBtn').addEventListener('click',()=>saveBook(false)); $('#skipNoteBtn').addEventListener('click',()=>saveBook(true));
     $('#prevPage').addEventListener('click',()=>turnPage(-1)); $('#nextPage').addEventListener('click',()=>turnPage(1));
-    $('#backBtn').addEventListener('click',closeDetail); $('#editBtn').addEventListener('click',openEdit);
+    $('#backBtn').addEventListener('click',closeDetail); $('#editBtn').addEventListener('click',openEdit); $('#deleteBtn').addEventListener('click',deleteBook);
+    $('#prevNotePage').addEventListener('click',()=>flipNotePage(-1)); $('#nextNotePage').addEventListener('click',()=>flipNotePage(1));
+    $('#confirmOk').addEventListener('click',()=>{if(confirmCallback){confirmCallback();hideConfirm();}});
+    $('#confirmCancel').addEventListener('click',hideConfirm);
+    $('#confirmLayer').addEventListener('click',e=>{if(e.target===e.currentTarget)hideConfirm();});
     $('#closeEdit').addEventListener('click',()=>$('#editLayer').classList.remove('open')); $('#saveEdit').addEventListener('click',saveEdit);
     $('#editLayer').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('open')});
     $('#shelfCase').addEventListener('touchstart',e=>touchStartX=e.changedTouches[0].clientX,{passive:true});
